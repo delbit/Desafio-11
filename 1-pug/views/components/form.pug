@@ -1,0 +1,16 @@
+.container.mt-5
+  .row.col-12.col-md-5
+    form.g-3(action='/api/guardar' method='post')
+      .input-group.mb-3
+        span.input-group-text Producto
+        input#title.form-control(type='text' name='title' placeholder='Producto' aria-label='Producto')
+      .input-group.mb-3
+        span.input-group-text $
+        input#price.form-control(type='number' name='price' placeholder='999.99' aria-label='Precio')
+      .input-group.mb-3
+        span.input-group-text Thumbnail
+        input#thumbnail.form-control(type='text' name='thumbnail' placeholder='https://picsum.photos/')
+      div
+        input(type='hidden' name='form' value='true')
+      .col-12
+        button.btn.btn-primary(type='submit') Guardar
