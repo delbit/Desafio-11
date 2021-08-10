@@ -1,0 +1,45 @@
+<% let cantProdutos=productos.length; %>
+<div class="container mt-5">
+  <div class="row col-12 col-md-7">
+  <% if (cantProdutos> 0) { %>
+
+    <table class="
+    table
+    align-middle
+    table-dark table-striped table-bordered
+    text-center
+    ">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Imagen</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% for (const producto of productos) { %>
+
+      <tr>
+        <!-- prettier-ignore -->
+        <%- `<td>${producto.title}</td>` %>
+        <%- `<td>${producto.price}</td>` %>
+        <td>
+          <div class="text-center wd-100">
+            <div class="card" style="width: 4rem; margin-left: auto; margin-right: auto">
+              <%- `<img src="${producto.thumbnail}" class="card-img-top mx-auto d-block" alt="..." />`%>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <% } %>
+    </tbody>
+    </table>
+    <!-- prettier-ignore -->
+    <% } else { %>
+
+    <div class="alert alert-warning" role="alert">
+      <p>No se encontraron productos</p>
+    </div>
+    <% } %>
+  </div>
+</div>
